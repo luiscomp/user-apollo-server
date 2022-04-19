@@ -1,0 +1,10 @@
+type Query {
+    serverInfo: String
+
+    listUsers: [User],
+    getUser(id: Int!): User,
+    deleteUser(id: Int): User,
+
+    listPerfis: [Perfil],
+    getPerfil(id: Int): Perfil
+} 

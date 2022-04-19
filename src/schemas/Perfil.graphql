@@ -1,0 +1,16 @@
+input PerfilInsert {
+    name: String!
+}
+
+input PerfilUpdate {
+    name: String!
+}
+
+input PerfilRel {
+    id: Int!
+}
+
+type Perfil {
+    id: Int!,
+    name: String
+}

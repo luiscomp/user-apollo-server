@@ -1,0 +1,21 @@
+input UserInsert {
+    name: String!,
+    email: String!,
+    perfil: PerfilRel!,
+    status: UserStatus
+}
+
+input UserUpdate {
+    name: String!,
+    email: String!,
+    perfil: PerfilRel!,
+    status: UserStatus
+}
+
+type User {
+    id: Int!,
+    name: String!,
+    email: String!,
+    perfil: Perfil!,
+    status: UserStatus
+}
