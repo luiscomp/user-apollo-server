@@ -3,7 +3,7 @@ type Query {
 
     listUsers: [User],
     findUserById(id: Int!): User,
-    findUserByName(name: String!): User,
+    findUserByName(name: String!): [User],
     deleteUser(id: Int): User,
 
     listPerfis: [Perfil],
