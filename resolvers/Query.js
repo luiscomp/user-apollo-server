@@ -17,7 +17,7 @@ module.exports = {
 		return user;
 	},
 	findUserByName(_, { name }) {
-		const user = users.find(u => u.name === name);
+		const user = users.find(u => u.name.toLowerCase().includes(name.toLowerCase()));
 		if (!user) {
 			throw new Error('User not find.');
 		}
