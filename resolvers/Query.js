@@ -9,8 +9,15 @@ module.exports = {
 	listUsers() {
 		return users;
 	},
-	getUser(_, { id }) {
+	findUserById(_, { id }) {
 		const user = users.find(u => u.id === id);
+		if (!user) {
+			throw new Error('User not find.');
+		}
+		return user;
+	},
+	findUserByName(_, { name }) {
+		const user = users.find(u => u.name === name);
 		if (!user) {
 			throw new Error('User not find.');
 		}

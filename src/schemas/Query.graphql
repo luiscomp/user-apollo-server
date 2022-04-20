@@ -2,7 +2,8 @@ type Query {
     serverInfo: String
 
     listUsers: [User],
-    getUser(id: Int!): User,
+    findUserById(id: Int!): User,
+    findUserByName(name: String!): User,
     deleteUser(id: Int): User,
 
     listPerfis: [Perfil],
