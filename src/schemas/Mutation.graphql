@@ -1,5 +1,5 @@
 type Mutation {
     insertUser(user: UserInsert): User,
     updateUser(id: Int, user: UserUpdate): User,
-    deleteUser(id: Int): Boolean,
+    deleteUser(id: Int): User,
 }
