@@ -19,5 +19,13 @@ module.exports = {
 		};
 		users[userIndex] = newUser;
 		return newUser;
+	},
+	deleteUser(_, { id }) {
+		const userIndex = users.findIndex(u => u.id === id);
+		if (userIndex === -1) {
+			throw new Error('User not find.');
+		}
+		const excluido = users.splice(userIndex, 1)[0];
+		return excluido;
 	}
 };
