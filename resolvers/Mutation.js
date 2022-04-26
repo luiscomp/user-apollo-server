@@ -1,9 +1,16 @@
-const { users } = require('../data/db.js');
+const { users, perfis } = require('../data/db.js');
 module.exports = {
 	insertUser(_, { user }) {
+		let perfil = perfis.find(perfil => perfil.id === user.perfil.id);
+
+		if (!perfil) {
+			throw new Error('Perfil not valid.');
+		}
+
 		const newUser = {
 			id: users.length + 1,
-			...user
+			...user,
+			perfil
 		};
 		users.push(newUser);
 		return newUser;

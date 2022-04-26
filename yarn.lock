@@ -152,6 +152,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@faker-js/faker@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-6.2.0.tgz#6d836ee8a580589b60c9088a3bdb0b669a468825"
+  integrity sha512-3kIcQ+aTr3I+LqDbJwbINFk5oA+a63LH57GPJt9PM8AWqN7nCwnubuSiWosHYQlyf2NicrvpzXQxllyLeEdpyQ==
+
 "@graphql-toolkit/code-file-loader@0.10.3":
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@graphql-toolkit/code-file-loader/-/code-file-loader-0.10.3.tgz#17a2f8206a82c3e786588c1b03a0a6ef30bb7997"

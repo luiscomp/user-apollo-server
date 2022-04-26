@@ -1,3 +1,19 @@
+const { faker } = require('@faker-js/faker');
+let nextId = 1;
+
+function getNextId() {
+	return nextId++;
+}
+
+function getRandomStatus() {
+	return faker.random.arrayElement([ 'ACTIVE', 'INACTIVE', 'BLOCKED' ]);
+}
+
+
+function getRandomPerfil() {
+	return faker.random.arrayElement(perfis);
+}
+
 const perfis = [ {
 	id: 1,
 	name: 'Administrador'
@@ -7,29 +23,23 @@ const perfis = [ {
 } ];
 
 const users = [ {
-	id: 1,
-	name: 'Luis Eduardo',
-	email: 'luizeduardo354@gmail.com',
-	perfil: {
-		id: 1
-	},
-	status: 'ACTIVE'
+	id: getNextId(),
+	name: faker.name.findName(),
+	email: faker.internet.email(),
+	perfil: getRandomPerfil(),
+	status: getRandomStatus()
 }, {
-	id: 2,
-	name: 'Thays Ferreira',
-	email: 'thaysfer@gmail.com',
-	perfil: {
-		id: 1
-	},
-	status: 'INACTIVE'
+	id: getNextId(),
+	name: faker.name.findName(),
+	email: faker.internet.email(),
+	perfil: getRandomPerfil(),
+	status: getRandomStatus()
 }, {
-	id: 3,
-	name: 'Daniela Smith',
-	email: 'danielasmith@gmail.com',
-	perfil: {
-		id: 2
-	},
-	status: 'BLOCKED'
+	id: getNextId(),
+	name: faker.name.findName(),
+	email: faker.internet.email(),
+	perfil: getRandomPerfil(),
+	status: getRandomStatus()
 } ];
 
 module.exports = { users, perfis };
