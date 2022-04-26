@@ -42,4 +42,4 @@ const users = [ {
 	status: getRandomStatus()
 } ];
 
-module.exports = { users, perfis };
+module.exports = { users, perfis, nextId };

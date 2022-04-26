@@ -1,4 +1,4 @@
-const { users, perfis } = require('../data/db.js');
+const { users, perfis, nextId } = require('../data/db.js');
 module.exports = {
 	insertUser(_, { user }) {
 		let perfil = perfis.find(perfil => perfil.id === user.perfil.id);
@@ -8,7 +8,7 @@ module.exports = {
 		}
 
 		const newUser = {
-			id: users.length + 1,
+			id: nextId(),
 			...user,
 			perfil
 		};
@@ -20,12 +20,11 @@ module.exports = {
 		if (userIndex === -1) {
 			throw new Error('User not find.');
 		}
-		const newUser = {
-			id,
+		const updatedUser = {
 			...user
 		};
-		users[userIndex] = newUser;
-		return newUser;
+		users[userIndex] = updatedUser;
+		return updatedUser;
 	},
 	deleteUser(_, { id }) {
 		const userIndex = users.findIndex(u => u.id === id);
