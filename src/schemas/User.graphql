@@ -1,6 +1,12 @@
+input UserLoginInput {
+    email: String!,
+    password: String!
+}
+
 input UserInsert {
     name: String!,
     email: String!,
+    password: String!,
     perfil: PerfilRel!,
     status: UserStatus
 }
@@ -10,6 +16,15 @@ input UserUpdate {
     email: String!,
     perfil: PerfilRel!,
     status: UserStatus
+}
+
+type UserAuth {
+    id: ID!
+    name: String!
+    email: String!
+    perfil: Perfil!
+    status: UserStatus
+    token: String!
 }
 
 type User {

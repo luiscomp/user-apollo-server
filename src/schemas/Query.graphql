@@ -1,6 +1,5 @@
 type Query {
-    serverInfo: String
-
+    login(user: UserLoginInput!): UserAuth!
     listUsers: [User],
     findUserById(id: Int!): User,
     findUserByName(name: String!): [User],

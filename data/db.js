@@ -1,8 +1,8 @@
 const { faker } = require('@faker-js/faker');
-let nextId = 1;
+let currentId = 1;
 
-function getNextId() {
-	return nextId++;
+function nextId() {
+	return currentId++;
 }
 
 function getRandomStatus() {
@@ -16,30 +16,40 @@ function getRandomPerfil() {
 
 const perfis = [ {
 	id: 1,
-	name: 'Administrador'
+	name: 'admin'
 }, {
 	id: 2,
-	name: 'Gestor'
+	name: 'operator'
 } ];
 
 const users = [ {
-	id: getNextId(),
+	id: nextId(),
 	name: faker.name.findName(),
 	email: faker.internet.email(),
 	perfil: getRandomPerfil(),
-	status: getRandomStatus()
+	status: getRandomStatus(),
+	password: faker.internet.password()
 }, {
-	id: getNextId(),
+	id: nextId(),
 	name: faker.name.findName(),
 	email: faker.internet.email(),
 	perfil: getRandomPerfil(),
-	status: getRandomStatus()
+	status: getRandomStatus(),
+	password: faker.internet.password()
 }, {
-	id: getNextId(),
+	id: nextId(),
 	name: faker.name.findName(),
 	email: faker.internet.email(),
 	perfil: getRandomPerfil(),
-	status: getRandomStatus()
+	status: getRandomStatus(),
+	password: faker.internet.password()
+}, {
+	id: nextId(),
+	name: faker.name.findName(),
+	email: 'test@email.com',
+	perfil: getRandomPerfil(),
+	status: getRandomStatus(),
+	password: '123'
 } ];
 
 module.exports = { users, perfis, nextId };
