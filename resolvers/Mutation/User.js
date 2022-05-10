@@ -1,4 +1,4 @@
-const { users, perfis, nextId } = require('../../data/db.js');
+const { users, perfis, nextUserId } = require('../../data/db.js');
 module.exports = {
 	insertUser(_, { user }, context) {
 		context && context.validUser();
@@ -10,7 +10,7 @@ module.exports = {
 		}
 
 		const newUser = {
-			id: nextId(),
+			id: nextUserId(),
 			...user,
 			perfil
 		};

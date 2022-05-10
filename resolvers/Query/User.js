@@ -7,10 +7,14 @@ module.exports = {
 		if (!loggedUser) {
 			throw new Error('Usuário ou senha inválidos');
 		}
-
 		loggedUser.token = getUserToken(loggedUser);
 
+		console.log(loggedUser);
+
 		return loggedUser;
+	},
+	listUsers() {
+		return users;
 	},
 	findUserById(_, { id }, context) {
 		context && context.validUser();
@@ -23,14 +27,6 @@ module.exports = {
 	},
 	findUserByName(_, { name }, context) {
 		context && context.validUser();
-
-		const user = users.filter(u => u.name.toLowerCase().includes(name.toLowerCase()));
-		if (!user) {
-			throw new Error('User not find.');
-		}
-		return user;
-	},
-	listUsers() {
-		return users;
+		return users.filter(u => u.name.toLowerCase().includes(name.toLowerCase()));
 	}
 };

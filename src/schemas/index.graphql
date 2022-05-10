@@ -1,5 +1,6 @@
 #import Query from './Query.graphql';
 #import Mutation from './Mutation.graphql';
+#import SolarPlate from './SolarPlate.graphql';
 #import Perfil from 'Perfil.graphql'
 #import User from 'User.graphql'
 #import UserStatus from 'UserStatus.graphql'
