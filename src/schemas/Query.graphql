@@ -1,10 +1,14 @@
 type Query {
-    serverInfo: String
-
+    login(user: UserLoginInput!): UserAuth!
     listUsers: [User],
     findUserById(id: Int!): User,
     findUserByName(name: String!): [User],
 
     listPerfis: [Perfil],
     getPerfil(id: Int): Perfil
+
+    listSolarPlates: [SolarPlate],
+    findSolarPlateById(id: Int!): SolarPlate,
+    findSolarPlateByModel(model: String!): [SolarPlate],
+    findSolarPlateByManufacturer(manufacturer: String!): [SolarPlate],
 } 
