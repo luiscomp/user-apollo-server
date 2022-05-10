@@ -1,18 +1,18 @@
 input SolarPlateInsert {
     model: String!,
-    manufaturer: String!,
+    manufacturer: String!,
     power: Int!,
 }
 
 input SolarPlateUpdate {
     model: String!,
-    manufaturer: String!,
+    manufacturer: String!,
     power: Int!,
 }
 
 type SolarPlate {
     id: Int!,
     model: String!,
-    manufaturer: String!,
+    manufacturer: String!,
     power: Int!,
 }

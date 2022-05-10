@@ -9,8 +9,6 @@ module.exports = {
 		}
 		loggedUser.token = getUserToken(loggedUser);
 
-		console.log(loggedUser);
-
 		return loggedUser;
 	},
 	listUsers() {
