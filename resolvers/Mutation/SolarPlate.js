@@ -18,6 +18,7 @@ module.exports = {
 			throw new Error('SolarPlate not find.');
 		}
 		const updatedSolarPlate = {
+			id,
 			...solarPlate
 		};
 		solarPlates[solarPlateIndex] = updatedSolarPlate;
