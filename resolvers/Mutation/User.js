@@ -25,6 +25,7 @@ module.exports = {
 			throw new Error('User not find.');
 		}
 		const updatedUser = {
+			id,
 			...user
 		};
 		users[userIndex] = updatedUser;
