@@ -1,7 +1,9 @@
 const jwt = require('jwt-simple');
 module.exports = ({ req }) => {
-	console.log(req.body.operationName.toLowerCase());
-	if([ 'introspectionquery', 'login' ].includes(req.body.operationName.toLowerCase())) {
+	const isIntrospection = req.body.query.split('\n')[0].includes('IntrospectionQuery');
+	const isLogin = req.body.query.split('\n')[0].includes('login');
+
+	if(isIntrospection || isLogin) {
 		return;
 	}
 
